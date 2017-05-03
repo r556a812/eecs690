@@ -77,15 +77,6 @@ int ContourGenerator::computeContourEdgesFor(float level, vec2*& lines)
         lines = new vec2[numActualPoints];
         lines = pointsArray;
 
-       /* for (int i = 0; i< numActualPoints; i++)
-        {
-            for (int j = 0; j < 2; j++)
-            {
-
-               std::cout << lines[i][j] << "\n";
-            }
-        }*/
-
         //Delete edgeArray now that done
         delete[] edgeArray;
 

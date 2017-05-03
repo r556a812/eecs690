@@ -12,10 +12,6 @@ float computeEdges(float vertex1, float vertex2, float level, int rowOrColumn)
    
     f = (level - vertex1)/(vertex2 - vertex1);
     c = ((1-f)*rowOrColumn) + (f*(rowOrColumn+1));
-    if (get_global_id(0) == 0)
-    {
-    printf("point1:  %f  point2: %f  F: %f  C:  %f  level:  %f  rc:  %i\n", vertex1, vertex2, f, c, level, rowOrColumn);
-    }
     
     return c;
     
@@ -440,11 +436,6 @@ void ActualEdges(__global float* vertexValues, __global int* edgeArray, float le
                 if (endpoints[i][j] != -1)
                 {
                     pointsArray[mySpot][j] = endpoints[i][j];
-                    
-                    if(place == 4)
-                    {
-                        printf("%f ", endpoints[i][j]);
-                    }
                 }
             }
             mySpot++;
